@@ -168,7 +168,9 @@
             margin-bottom: 15px;
             box-shadow: 1px 1px 10px 5px #00000060;
         }
-
+        .header-title{
+            width: 100%;
+        }
         .logout-icon{
             cursor: pointer;
         }
@@ -449,6 +451,7 @@
         const btnInfo = document.querySelectorAll('.info');
         btnInfo.forEach((btn) => {
             btn.addEventListener('click', function () {
+                document.querySelector('.modal-description').innerHTML = `<h1>Estamos trabajando en la funcionalidad</h1>`;
                 document.querySelector('.modal').style.opacity = '1';
                 document.querySelector('.modal').style.display = 'flex';
             });
