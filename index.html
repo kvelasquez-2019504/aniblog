@@ -36,7 +36,6 @@
             z-index: 1;
             /* display: none;quitar */
         }
-
         .login-container {
             display: flex;
             flex-direction: column;
@@ -45,7 +44,6 @@
             height: 100%;
             width: 100%;
         }
-
         .container-form {
             background-color: #ffffff67;
             border-radius: 15px;
@@ -54,14 +52,12 @@
             width: 95%;
             padding: 10px;
         }
-
         .img-login {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             margin: 10px;
         }
-
         @media (max-width: 560px) {
             .container-form {
                 width: 90%;
@@ -69,20 +65,17 @@
                 margin-right: 10px;
             }
         }
-
         @media (min-width: 560px) {
             .container-form {
                 margin: auto;
                 width: 480px;
             }
         }
-
         .section-login-header {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         .login-form {
             display: flex;
             flex-direction: column;
@@ -91,7 +84,6 @@
             width: 100%;
             letter-spacing: 2px;
         }
-
         .textfield input {
             outline: none;
             border: none;
@@ -100,17 +92,14 @@
             max-width: fit-content;
             padding: 8px;
         }
-
         .textfield input:hover {
             border-bottom: 2px solid #4aC;
             box-shadow: 0px 5px 10px 3px #00000055;
         }
-
         .textfield-input {
             width: 100%;
             padding: 0px;
         }
-
         .btn-login {
             letter-spacing: 4px;
             background-color: #4aC;
@@ -121,13 +110,40 @@
             cursor: pointer;
             transition: all 0.2s ease-in-out;
         }
-
         .btn-login:hover {
             background-color: #4aC;
             transform: scale(1.05);
             box-shadow: 0px 0px 10px 5px #00000060;
         }
-
+        .aviso {
+            max-width: 250px;
+            display: flex;
+            flex-direction: grid;
+            align-items: center;
+            justify-content: left;
+            margin-top: 20px;
+            background-color: rgb(194, 193, 193);
+            position: sticky;
+            bottom: 15px;
+            left: 15px; 
+            border-radius: 15px;
+            min-width: 220px;
+        }
+        .aviso img{
+            width: 100px;
+            height: 120px;
+            border-radius: 50%;
+        }
+        .aviso span{
+            color: rgb(3, 12, 141);
+        }
+        @media (max-width: 480px) {
+            .aviso {
+                max-width: 250px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
         .section-principal {
             transition: opacity 1s ease-in-out;
             background-color: rgba(11, 108, 153, 0.877);
@@ -136,7 +152,6 @@
             width: 100%;
             display: none;
         }
-
         .container-principal {
             display: flex;
             flex-direction: column;
@@ -147,7 +162,6 @@
             margin-bottom: 15px;
             box-shadow: 1px 1px 10px 5px #00000060;
         }
-
         .container-cards{
             width: 90%;
             margin: auto;
@@ -166,7 +180,6 @@
             place-content: center;
             gap:15px;
         }
-
         .item-card{
             width: 350px;
             height: 450px;
@@ -175,7 +188,6 @@
             border-radius: 5px;
             padding: 10px;
         }
-
         .item-card:hover{
             transform: scale(1.03);
             box-shadow: 0px 0px 11px 5px #00000060;
@@ -319,6 +331,17 @@
                         <button class="btn-login" type="button">Login</button>
                     </div>
                 </form>
+            </div>
+            <div class="aviso">
+                <img src="https://i.pinimg.com/originals/34/23/57/34235708bafeccd7ef43e786f177fbfb.jpg" alt="">
+                <div class="credenciales">
+                    <p>
+                        <span>Usuario: </span>admin
+                    </p>
+                    <p>
+                        <span>Contraseña: </span>admin
+                    </p>
+                </div>
             </div>
         </div>
     </section>
