@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            outline: none;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        h1, h2, h3, h4,h5,h6 {
+            margin: 0px;
+        }
+        button{
+            border: none;
+            outline: none;
+        }
+
+        .section-login {
+            background-image: url('https://cdn.magicdecor.in/com/2023/10/20174720/Anime-Scenery-Wallpaper-for-Walls.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            z-index: 1;
+            /* display: none;quitar */
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container-form {
+            background-color: #ffffff55;
+            border-radius: 15px;
+            box-shadow: 0px 0px 12px 5px #00000065;
+            margin: auto;
+            width: 95%;
+            padding: 10px;
+        }
+
+        .img-login {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        @media (max-width: 560px) {
+            .container-form {
+                width: 90%;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        @media (min-width: 560px) {
+            .container-form {
+                margin: auto;
+                width: 480px;
+            }
+        }
+
+        .section-login-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+        .textfield input {
+            outline: none;
+            border: none;
+            border-bottom: 2px solid #4aC;
+            width: 100%;
+            max-width: fit-content;
+            padding: 8px;
+        }
+
+        .textfield input:hover {
+            border-bottom: 2px solid #4aC;
+            box-shadow: 0px 5px 10px 3px #00000055;
+        }
+
+        .textfield-input {
+            width: 100%;
+            padding: 0px;
+        }
+
+        .btn-login {
+            letter-spacing: 4px;
+            background-color: #4aC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-login:hover {
+            background-color: #4aC;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px 5px #00000060;
+        }
+
+        .section-principal {
+            transition: opacity 1s ease-in-out;
+            background-color: rgba(11, 108, 153, 0.877);
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            display: none;
+        }
+
+        .container-principal {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container-cards{
+            width: 90%;
+            margin: auto;
+            padding-bottom: 15px;
+        }
+
+        .container-principal .header {
+            color: white;
+            text-align: center;
+        }
+
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            place-content: center;
+            gap:15px;
+        }
+
+        .item-card{
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .item-card:hover{
+            transform: scale(1.03);
+            box-shadow: 0px 0px 11px 5px #00000060;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .images-card{
+            display: flex;
+            align-items: center;
+            place-content: center;
+        }
+
+        .name-card{
+            text-align: center;
+            letter-spacing: 4px;
+        }
+
+        .images-card img{
+            width: 150px;
+            height: 125px;
+            margin: 7px;
+        }
+        .personal span, .jutsus span{
+            color: #e4460d;
+        }
+        .jutsus {
+            max-height: 150px;
+            overflow: auto;
+        }
+        .jutsus h3{
+            position: sticky;
+            top: 0px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        .jutsus ul{
+            margin: 0px;
+        }
+        .info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20px;
+            margin: 10px auto;
+        }
+        .info button{
+            width: 80%;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .info button:hover{
+            transform: scale(1.01);
+            cursor: pointer;
+            box-shadow: 0px 4px 12px 2px #00000060;
+        }
+
+        .btn-orange{
+            color: white;
+            background-color: #ff6600;
+            letter-spacing: 4px;
+            font-size: 14px; 
+            transition: background-color 0.3s; 
+        }
+        .btn-yellow{
+            color: white;
+            background-color: #ffcc00;
+            letter-spacing: 4px;
+            font-size: 14px; 
+            transition: background-color 0.3s; 
+        }
+        .modal{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+            background-color: #0009;
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .modal-container{
+            width: 50%;
+            height: 40%;
+            margin: auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            gap: 10px;
+        }
+        .modal img{
+            width: 110px;
+            height: 130px;
+        }
+        .modal button{
+            width: 75px;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+            background-color: #f5c527;
+            color: white;
+        }
+        .modal button:hover{
+            cursor: pointer;
+            transform: scale(1.01);
+            box-shadow: 0px 0px 10px 2px #00000060;
+        }
+    </style>
+    <title>AniBlog</title>
+</head>
+
+<body>
+    <section class="section-login">
+        <div class="login-container">
+            <div class="container-form">
+                <div class="section-login-header">
+                    <h1>INICIAR SESIÓN</h1>
+                    <img class="img-login" src="https://i.pinimg.com/736x/68/53/68/6853686f8230d972ded931acc7cc9cbe.jpg"
+                        alt="">
+                </div>
+                <form action="" id="form">
+                    <div class="login-form">
+                        <div class="textfield">
+                            <label for="username">Usuario</label>
+                            <div class="textfield-input">
+                                <input type="text" id="username" name="username" required placeholder="Ingrese admin">
+                            </div>
+                        </div>
+                        <div class="textfield">
+                            <label for="password">Contraseña</label>
+                            <div class="textfield-input">
+                                <input type="password" id="password" name="password" required
+                                    placeholder="Ingrese admin">
+                            </div>
+                        </div>
+                        <button class="btn-login" type="button">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="section-principal">
+        <div class="container-principal">
+            <div class="header">
+                <h1>Bienvenido a AniBlog</h1>
+                <p>Ve algunos datos e información de personajes de naruto.</p>
+            </div>
+            <div class="container-cards">
+                <div class="cards">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="modal">
+        <div class ='modal-container'>
+            <div class="modal-header">
+                <img src="https://i.pinimg.com/originals/94/5d/92/945d92f8edde5a58e9b2185e3727353e.gif" alt="">
+            </div>
+            <div class="modal-description">
+                <h1>Estamos trabajando en la funcionalidad</h1>
+            </div>
+            <button id="close-modal">OK</button>
+        </div>
+    </section>
+    <script type="module">
+        const btnlogin = document.querySelector('.btn-login');
+        btnlogin.addEventListener("click", function () {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if (user == 'admin' && pass == 'admin') {
+                document.querySelector('.section-login').style.opacity = '0';
+                document.querySelector('.section-principal').style.opacity = '1';
+                document.querySelector('.section-principal').style.transition = 'opacity 1s ease-in-out';
+                document.querySelector('.section-principal').style.display = 'block';
+                setTimeout(() => {
+                    document.querySelector('.section-login').style.zIndex = '0';
+                    document.querySelector('.section-principal').style.zIndex = '1';
+                }, 1200);
+            }
+        });
+        try {
+            const response = await fetch('https://dattebayo-api.onrender.com/characters');
+            const data = await response.json();
+            console.log(data.characters)
+            if(data.characters.length>0){
+                let cards = document.querySelector('.cards').innerHTML;
+                data.characters.forEach((char,index)=>{
+                    cards += `
+                    <div class="item-card" id="${char.id}">
+                        <div class="images-card">
+                            ${
+                                char.images.map(image => `<img src="${image}" alt="${char.name} image">`).join('')
+                            }
+                        </div>
+                        <div class="name-card">
+                            <h2>${char.name}</h2>
+                        </div>
+                        <div class="description-card" id="${char.id}">
+                            <div class="personal">
+                                <h3><span>Género:</span> ${char.personal.sex=="Male"? 'Masculino':'Femenino'}</h3>
+                                <h3><span>Fecha de cumpleaños:</span> ${char.personal.birthdate}</h3>
+                                <h3><span>Clan:</span> ${char.personal.clan?char.personal.clan:'N/A'}</h3>
+                                <h3><span>Tipo de sangre:</span> ${char.personal.bloodType}</h3>
+                            </div>
+                            <div class="jutsus">
+                                <h3><span>Jutsus:</span></h3>
+                                <ul>
+                                    ${char.jutsu.map(jutsu => `<li>${jutsu}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="info" id="${char.id}">
+                                <button class="${(index%2)==0 ? 'btn-orange' : 'btn-yellow'}">MAS INFO...</button>
+                            </div>
+                        </div>
+                    </div>`
+                });
+                document.querySelector('.cards').innerHTML = cards;
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+        const btnInfo = document.querySelectorAll('.info');
+        btnInfo.forEach((btn) => {
+            btn.addEventListener('click', function () {
+                document.querySelector('.modal').style.opacity = '1';
+                document.querySelector('.modal').style.display = 'flex';
+            });
+        });
+        const btnCloseModal = document.getElementById('close-modal');
+        btnCloseModal.addEventListener('click', function () {
+            document.querySelector('.modal').style.opacity = '0';
+            document.querySelector('.modal').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
