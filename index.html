@@ -35,6 +35,7 @@
             transition: opacity 1s ease-in-out;
             position: absolute;
             z-index: 1;
+            overflow: hidden;
         }
         .login-container {
             display: flex;
@@ -49,7 +50,6 @@
             border-radius: 15px;
             box-shadow: 0px 0px 12px 5px #00000065;
             margin: auto;
-            width: 95%;
             padding: 10px;
         }
         .img-login {
@@ -60,7 +60,6 @@
         }
         @media (max-width: 560px) {
             .container-form {
-                width: 90%;
                 margin-left: 10px;
                 margin-right: 10px;
             }
@@ -142,6 +141,16 @@
                 max-width: 250px;
                 margin-left: 10px;
                 margin-right: 10px;
+            }
+        }
+        @media (max-width:350px){
+            .aviso img{
+                width: 75px;
+                height: 90px;
+                border-radius: 50%;
+            }
+            .aviso {
+                max-width: 200px;
             }
         }
         .section-principal {
@@ -407,7 +416,6 @@
         try {
             const response = await fetch(baseUrlApi+'/characters');
             const data = await response.json();
-            console.log(data.characters)
             if(data.characters.length>0){
                 let cards = document.querySelector('.cards').innerHTML;
                 data.characters.forEach((char,index)=>{
